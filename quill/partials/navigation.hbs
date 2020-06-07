@@ -1,0 +1,16 @@
+<nav class="main-menu hidden-sm hidden-xs" id="main-menu">
+	<ul>
+		{{#foreach navigation}}
+		<li class="{{slug}}{{#if current}} current-menu-item{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+		{{#if @labs.members}}
+		{{#if @member}}
+		<li><a href="#signout" data-members-signout>{{t "Sign out"}}</a></li>
+		<li><a class="menu-btn" href="/account/">{{t "Account"}}</a></li>
+		{{else}}
+		<li><a href="/signin/">{{t "Sign in"}}</a></li>
+		<li><a class="menu-btn" href="/signup/">{{t "Subscribe"}}</a></li>
+		{{/if}}
+		{{/if}}
+	</ul>
+</nav>

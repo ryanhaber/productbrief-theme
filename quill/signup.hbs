@@ -1,0 +1,45 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<!-- start post -->
+<section class="content-area members-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="post post-single page-template">
+                    <h1 class="title text-center">{{t "Choose your subscription plan"}}</h1>
+                    <div class="post-content">
+                        <div class="members-page-subtitile text-center">
+                            {{t "Unlock full access to"}} {{@site.title}} {{t "and see the entire library of members-only content & updates"}}
+                        </div>
+                        {{#if @member.paid}}
+
+                            {{!-- Logged in, paying member: Redirect home --}}
+                            <script>window.location = '{{@site.url}}/';</script>
+
+                        {{else if @member}}
+                        {{!-- Logged in, not paying: Check out --}}
+                        <div class="pricing-table-wrap">
+                            {{> members/pricing-table-monthly}}
+                            {{> members/pricing-table-yearly}}
+                        </div>
+
+                        {{else}}
+                        {{!-- Logged in, not paying: Check out --}}
+                        <div class="pricing-table-wrap">
+                            {{> members/pricing-table-free}}
+                            {{> members/pricing-table-monthly}}
+                            {{> members/pricing-table-yearly}}
+                        </div>
+                        <div class="text-center sign-in-link">
+                            {{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a>
+                        </div>
+
+                        {{/if}}
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end container -->

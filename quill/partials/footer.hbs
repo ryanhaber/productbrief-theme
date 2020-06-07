@@ -1,0 +1,34 @@
+<!-- start footer -->
+<footer class="site-footer">
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					{{> widget-recentpost}}
+				</div>
+				<div class="col-md-4">
+					{{> widget-tagcloud}}
+				</div>
+				<div class="col-md-4">
+					{{> widget-subscribe}}
+					{{> widget-social}}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="copyright-info align-center">
+						&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>. {{t "All right Reserved."}}
+						{{{t "Powered by {ghostlink}"  ghostlink="<a href=\"https://ghost.org/\">Ghost</a>"}}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- end footer -->
+<span class="back-to-top pull-right" href="#" id="back-to-top"><i class="fa fa-angle-up"></i></span>
+{{> search-modal}}

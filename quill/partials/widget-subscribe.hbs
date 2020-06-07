@@ -1,0 +1,32 @@
+{{#if @labs.members}}
+<!-- strat newsletter widget -->
+<div class="widget">
+	<h4 class="widget-title">{{t "Subscribe"}}</h4>
+	<div class="content newsletter">
+        {{#if @members}}
+         <p>{{t "You are already a subscriber."}}</p>
+        {{else}}
+        <p>{{t "Get our latest article delivered to your email box."}}</p>
+        <form class="signup-form" data-members-form="subscribe">
+            <div class="form-group{{#if error}} error{{/if}}">
+                <div class="input-group">
+                    <input data-members-email type="email" class="form-control email" id="email" placeholder="{{t "Your email address"}}" required/>
+                    <div class="input-group-btn">
+                        <button class="form-control btn btn-primary" type="submit"><span>{{t "Subscribe"}}</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="messages-wrap text-center">
+                <div class="message-success">
+                    <strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to complete sign in"}}
+                </div>
+                <div class="message-error">
+                    <strong>{{t "Error!"}}</strong> {{t "Please enter a valid email address!"}}
+                </div>
+            </div>
+        </form>
+        {{/if}}
+    </div>
+</div>
+<!-- end newsletter widget -->
+{{/if}}

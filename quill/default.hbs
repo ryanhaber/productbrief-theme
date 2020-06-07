@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+    {{! Document Settings }}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- stylesheets -->
+	{{! Styles'n'Scripts }}
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700%7CRoboto:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="{{asset "css/slick.css"}}">
+	<link rel="stylesheet" href="{{asset "css/bootstrap.min.css"}}">
+	<link rel="stylesheet" href="{{asset "css/font-awesome.min.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/hl-styles/atom-one-dark.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+	{{! inserting theme config partial}}
+	{{> config}}
+	{{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+    {{! insert header partial}}
+    {{> header}}
+
+    {{{body}}}
+
+    {{! insert footer partial}}
+    {{> footer}}
+	{{#if @labs.members}}
+	{{> members/notifications}}
+	{{/if}}
+	{{! scripts}}
+    <script>if(typeof api_key != "undefined") {var searchApi = '{{@site.url}}/ghost/api/v3/content/posts/?key='+api_key+'&limit=all&fields=id,title,excerpt,custom_excerpt,url,published_at&formats=plaintext';}</script>
+	<script type="text/javascript">
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function () {
+	    var s = document.createElement('script'); s.async = true;
+	    s.type = 'text/javascript';
+	    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="{{asset "js/bootstrap.min.js"}}"></script>
+	<script src="{{asset "js/plugins.js"}}"></script>
+	<script src="{{asset "js/main.js"}}"></script>
+	{{ghost_foot}}
+</body>
+</html>
