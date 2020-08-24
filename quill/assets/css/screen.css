@@ -94,6 +94,12 @@ h6,
   font-size: 1.2rem;
   line-height: 1.6rem;
 }
+.reading_time {
+  color: #572A26;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
 img {
   max-width: 100%;
 }
